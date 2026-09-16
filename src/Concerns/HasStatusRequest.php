@@ -10,6 +10,6 @@ trait HasStatusRequest
 {
     public function status(): array
     {
-        return $this->send(new GetStatusRequest())->array();
+        return $this->send(new GetStatusRequest())->array(default: []);
     }
 }
