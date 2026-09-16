@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Codetiv\Upgates\Sdk;
 
 use Codetiv\Upgates\Sdk\Concerns\HasArticlesResource;
+use Codetiv\Upgates\Sdk\Concerns\HasAvailabilitiesResource;
 use Codetiv\Upgates\Sdk\Concerns\HasNewsResource;
 use Codetiv\Upgates\Sdk\Concerns\HasPriceListsResource;
 use Codetiv\Upgates\Sdk\Concerns\HasStatusRequest;
@@ -24,6 +25,7 @@ final class Upgates extends Connector implements HasPagination
 {
     use AlwaysThrowOnErrors;
     use HasArticlesResource;
+    use HasAvailabilitiesResource;
     use HasNewsResource;
     use HasPriceListsResource;
     use HasStatusRequest;
