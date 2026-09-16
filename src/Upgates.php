@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Codetiv\Upgates\Sdk;
 
 use Codetiv\Upgates\Sdk\Concerns\HasNewsResource;
+use Codetiv\Upgates\Sdk\Concerns\HasPriceListsResource;
 use Codetiv\Upgates\Sdk\Concerns\HasStatusRequest;
 use Codetiv\Upgates\Sdk\Contracts\HasCustomPaginatedItems;
 use Codetiv\Upgates\Sdk\Exceptions\UpgatesApiException;
@@ -22,6 +23,7 @@ final class Upgates extends Connector implements HasPagination
 {
     use AlwaysThrowOnErrors;
     use HasNewsResource;
+    use HasPriceListsResource;
     use HasStatusRequest;
 
     public function __construct(
