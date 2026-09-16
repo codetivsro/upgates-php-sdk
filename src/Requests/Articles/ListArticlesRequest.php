@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Codetiv\Upgates\Sdk\Requests\Articles;
 
 use Codetiv\Upgates\Sdk\Contracts\HasCustomPaginatedItems;
+use Codetiv\Upgates\Sdk\Support\Helpers;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Http\Response;
@@ -37,8 +38,8 @@ final class ListArticlesRequest extends Request implements HasCustomPaginatedIte
     protected function defaultQuery(): array
     {
         return [
-            'creation_time_from' => $this->creationTimeFrom,
-            'last_update_time_from' => $this->lastUpdateTimeFrom,
+            'creation_time_from' => Helpers::convertQueryDateFormatOrNull($this->creationTimeFrom),
+            'last_update_time_from' => Helpers::convertQueryDateFormatOrNull($this->lastUpdateTimeFrom),
             'active_yn' => $this->active,
             'language' => $this->language,
             'category_code' => $this->categoryCode,
