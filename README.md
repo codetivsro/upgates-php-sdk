@@ -18,6 +18,10 @@ $upgates = new Upgates(
 
 // Uses product resource to get complete product's list
 $products = $upgates->products()->completeList();
+
+foreach ($products as $item) {
+    echo 'Product: ' . $item['code'] . PHP_EOL;
+}
 ```
 
 ## Installation
