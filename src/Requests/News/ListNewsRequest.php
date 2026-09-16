@@ -30,7 +30,7 @@ final class ListNewsRequest extends Request implements HasCustomPaginatedItems, 
 
     public function getItemsFromResponse(Response $response): array
     {
-        return $response->array('news');
+        return $response->array('news', []);
     }
 
     protected function defaultQuery(): array
