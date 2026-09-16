@@ -1,0 +1,37 @@
+{
+    "name": "codetiv/upgates-php-sdk",
+    "description": "Elegant SDK written in PHP to work with the Upgates API",
+    "keywords": [
+        "upgates",
+        "php",
+        "api",
+        "sdk"
+    ],
+    "homepage": "https://github.com/codetivsro/upgates-php-sdk",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pavel Skrbel",
+            "email": "pavel.skrbel@codetiv.cz",
+            "homepage": "https://pavelskrbel.cz",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "saloonphp/saloon": "^4.0",
+        "saloonphp/pagination-plugin": "^2.0"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^8.1",
+        "laravel/pint": "^1.18"
+    },
+    "autoload": {
+        "psr-4": {
+            "Codetiv\\Upgates\\Sdk\\": "src"
+        }
+    },
+    "scripts": {
+        "pint": "pint",
+        "pint:test": "pint --test"
+    }
+}
