@@ -1,8 +1,6 @@
 <p align="center">
-    <picture><source media="(prefers-color-scheme: dark)" srcset=".github/media/upgates-logo-dark.png"><img src=".github/media/upgates-logo.png" height="56" align="left"></picture>
+    <picture><source media="(prefers-color-scheme: dark)" srcset=".github/media/upgates-logo-dark.png"><img src=".github/media/upgates-logo.png" height="56"></picture>
 </p>
-
-<br/>
 
 # Upgates PHP SDK
 
