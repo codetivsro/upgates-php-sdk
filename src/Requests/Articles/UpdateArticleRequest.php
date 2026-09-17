@@ -30,8 +30,10 @@ final class UpdateArticleRequest extends Request implements HasBody
     {
         return [
             'articles' => [
-                'article_id' => $this->id,
-                ...$this->data,
+                [
+                    'article_id' => $this->id,
+                    ...$this->data,
+                ],
             ],
         ];
     }

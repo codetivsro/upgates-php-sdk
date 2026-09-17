@@ -30,8 +30,10 @@ final class UpdateAvailabilityRequest extends Request implements HasBody
     {
         return [
             'availabilities' => [
-                'id' => $this->id,
-                ...$this->data,
+                [
+                    'id' => $this->id,
+                    ...$this->data,
+                ],
             ],
         ];
     }
