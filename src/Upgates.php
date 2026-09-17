@@ -10,6 +10,7 @@ use Codetiv\Upgates\Sdk\Concerns\HasCartsResource;
 use Codetiv\Upgates\Sdk\Concerns\HasCategoriesResource;
 use Codetiv\Upgates\Sdk\Concerns\HasConversionCodesResource;
 use Codetiv\Upgates\Sdk\Concerns\HasInvoicesResource;
+use Codetiv\Upgates\Sdk\Concerns\HasLabelsResource;
 use Codetiv\Upgates\Sdk\Concerns\HasLanguagesResource;
 use Codetiv\Upgates\Sdk\Concerns\HasManufacturersResource;
 use Codetiv\Upgates\Sdk\Concerns\HasMetasResource;
@@ -42,6 +43,7 @@ final class Upgates extends Connector implements HasPagination
     use HasCategoriesResource;
     use HasConversionCodesResource;
     use HasInvoicesResource;
+    use HasLabelsResource;
     use HasLanguagesResource;
     use HasManufacturersResource;
     use HasMetasResource;
