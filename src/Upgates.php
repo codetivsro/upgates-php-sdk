@@ -6,6 +6,7 @@ namespace Codetiv\Upgates\Sdk;
 
 use Codetiv\Upgates\Sdk\Concerns\HasArticlesResource;
 use Codetiv\Upgates\Sdk\Concerns\HasAvailabilitiesResource;
+use Codetiv\Upgates\Sdk\Concerns\HasCategoriesResource;
 use Codetiv\Upgates\Sdk\Concerns\HasInvoicesResource;
 use Codetiv\Upgates\Sdk\Concerns\HasLanguagesResource;
 use Codetiv\Upgates\Sdk\Concerns\HasNewsResource;
@@ -31,6 +32,7 @@ final class Upgates extends Connector implements HasPagination
     use AlwaysThrowOnErrors;
     use HasArticlesResource;
     use HasAvailabilitiesResource;
+    use HasCategoriesResource;
     use HasInvoicesResource;
     use HasLanguagesResource;
     use HasNewsResource;
