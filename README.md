@@ -17,7 +17,7 @@ $upgates = new Upgates(
 );
 
 // Uses product resource to get complete product's list
-$products = $upgates->products()->completeList();
+$products = $upgates->products()->listComplete();
 
 foreach ($products as $item) {
     echo 'Product: ' . $item['code'] . PHP_EOL;
@@ -79,7 +79,7 @@ Resource checklist based on the official [API reference](https://docs.upgates.co
 - [x] Conversion codes (Konverzní kódy)
 - [x] Shopping carts (Košíky)
 - [x] Products (Produkty)
-- [ ] Product lists (Produkty - seznamy)
+- [x] Product lists (Produkty - seznamy)
 - [ ] Product reviews & ratings (Produkty - recenze a hodnocení)
 - [ ] Manufacturers (Výrobci)
 - [ ] Parameters (Parametry)
