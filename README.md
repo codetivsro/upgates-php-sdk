@@ -54,8 +54,8 @@ After you have all of that you can instantiate the SDK:
 use Codetiv\Upgates\Sdk\Upgates;
 
 $upgates = new Upgates(
-    storeName: 'dev-shop-1',
-    serverMark: 't1',
+    storeName: 'mystore',
+    serverMark: 's10',
     apiLogin: '11111111',
     apiKey: 'rdK2STJcJVWqq2G1'
 );
