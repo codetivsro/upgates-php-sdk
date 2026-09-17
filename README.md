@@ -80,7 +80,7 @@ Resource checklist based on the official [API reference](https://docs.upgates.co
 - [x] Shopping carts (Košíky)
 - [x] Products (Produkty)
 - [x] Product lists (Produkty - seznamy)
-- [ ] Product reviews & ratings (Produkty - recenze a hodnocení)
+- [x] Product reviews & ratings (Produkty - recenze a hodnocení)
 - [ ] Manufacturers (Výrobci)
 - [ ] Parameters (Parametry)
 - [ ] Custom fields (Vlastní pole)
