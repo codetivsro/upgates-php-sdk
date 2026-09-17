@@ -57,7 +57,7 @@ final class ParametersResource extends BaseResource
         return $this->connector->paginate($request)->items();
     }
 
-    public function deleteValues(array $ids): array
+    public function deleteValues(int...$ids): array
     {
         $request = new DeleteParametersValuesRequest($ids);
 
