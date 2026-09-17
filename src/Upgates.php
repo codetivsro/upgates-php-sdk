@@ -21,6 +21,7 @@ use Codetiv\Upgates\Sdk\Concerns\HasPriceListsResource;
 use Codetiv\Upgates\Sdk\Concerns\HasProductsResource;
 use Codetiv\Upgates\Sdk\Concerns\HasShipmentsResource;
 use Codetiv\Upgates\Sdk\Concerns\HasStatusRequest;
+use Codetiv\Upgates\Sdk\Concerns\HasStocksResource;
 use Codetiv\Upgates\Sdk\Concerns\HasStoreConfigRequest;
 use Codetiv\Upgates\Sdk\Contracts\HasCustomPaginatedItems;
 use Codetiv\Upgates\Sdk\Exceptions\UpgatesApiException;
@@ -54,6 +55,7 @@ final class Upgates extends Connector implements HasPagination
     use HasProductsResource;
     use HasShipmentsResource;
     use HasStatusRequest;
+    use HasStocksResource;
     use HasStoreConfigRequest;
 
     public function __construct(

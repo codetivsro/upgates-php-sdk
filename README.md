@@ -85,7 +85,7 @@ Resource checklist based on the official [API reference](https://docs.upgates.co
 - [x] Parameters (Parametry)
 - [x] Custom fields (Vlastní pole)
 - [x] Tags (Štítky)
-- [ ] Warehouses (Sklady)
+- [x] Warehouses (Sklady)
 - [ ] Orders (Objednávky)
 - [ ] Order history (Objednávky - historie)
 - [ ] Order attachments (Objednávky - přílohy)
