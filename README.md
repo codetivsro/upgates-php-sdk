@@ -78,7 +78,7 @@ Resource checklist based on the official [API reference](https://docs.upgates.co
 - [x] Categories (Kategorie)
 - [x] Conversion codes (Konverzní kódy)
 - [x] Shopping carts (Košíky)
-- [ ] Products (Produkty)
+- [x] Products (Produkty)
 - [ ] Product lists (Produkty - seznamy)
 - [ ] Product reviews & ratings (Produkty - recenze a hodnocení)
 - [ ] Manufacturers (Výrobci)
