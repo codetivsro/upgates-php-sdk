@@ -60,3 +60,44 @@ $upgates = new Upgates(
     apiKey: 'rdK2STJcJVWqq2G1'
 );
 ```
+
+## API coverage
+
+Resource checklist based on the official [API reference](https://docs.upgates.com/api-reference).
+
+- [x] Articles (Články)
+- [x] Availabilities (Dostupnosti)
+- [x] Shipments (Dopravy)
+- [x] Invoices (Faktury)
+- [x] Languages (Jazyky)
+- [x] News (Aktuality)
+- [x] Price lists (Ceníky)
+- [x] E-shop settings (Nastavení eshopu)
+- [x] Shop operator (Provozovatel eshopu)
+- [x] API status (Status)
+- [ ] Products (Produkty)
+- [ ] Product lists (Produkty - seznamy)
+- [ ] Product reviews & ratings (Produkty - recenze a hodnocení)
+- [ ] Categories (Kategorie)
+- [ ] Manufacturers (Výrobci)
+- [ ] Parameters (Parametry)
+- [ ] Custom fields (Vlastní pole)
+- [ ] Tags (Štítky)
+- [ ] Warehouses (Sklady)
+- [ ] Orders (Objednávky)
+- [ ] Order history (Objednávky - historie)
+- [ ] Order attachments (Objednávky - přílohy)
+- [ ] Order statuses (Stavy objednávek)
+- [ ] Shopping carts (Košíky)
+- [ ] Customers (Zákazníci)
+- [ ] Customer groups (Skupiny zákazníků)
+- [ ] Users (Uživatelé)
+- [ ] Payments (Platby)
+- [ ] Discount coupons (Slevové kupóny)
+- [ ] Conversion codes (Konverzní kódy)
+- [ ] Redirects (Přesměrování)
+- [ ] Files (Soubory)
+- [ ] Advisors (Rádce)
+- [ ] Webhooks (Webhooky)
+- [ ] Graphics — code editor (Grafika - editor kódu)
+- [ ] Graphics — backups (Grafika - zálohy)
