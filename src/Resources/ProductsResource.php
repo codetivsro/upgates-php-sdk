@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Codetiv\Upgates\Sdk\Resources;
 
+use Codetiv\Upgates\Sdk\Requests\Products\CreateProductRatingReviewRequest;
 use Codetiv\Upgates\Sdk\Requests\Products\CreateProductsRequest;
+use Codetiv\Upgates\Sdk\Requests\Products\DeleteProductRatingsReviewsRequest;
 use Codetiv\Upgates\Sdk\Requests\Products\DeleteProductsRequest;
 use Codetiv\Upgates\Sdk\Requests\Products\DeleteProductVariantsRequest;
 use Codetiv\Upgates\Sdk\Requests\Products\GetProductFilesRequest;
@@ -20,6 +22,7 @@ use Codetiv\Upgates\Sdk\Requests\Products\ListProductsImagesQueueRequest;
 use Codetiv\Upgates\Sdk\Requests\Products\ListProductsLabelsRequest;
 use Codetiv\Upgates\Sdk\Requests\Products\ListProductsParametersRequest;
 use Codetiv\Upgates\Sdk\Requests\Products\ListProductsPricesRequest;
+use Codetiv\Upgates\Sdk\Requests\Products\ListProductsRatingsReviewsRequest;
 use Codetiv\Upgates\Sdk\Requests\Products\ListProductsSimpleRequest;
 use Codetiv\Upgates\Sdk\Requests\Products\ListProductsVariantsRequest;
 use Codetiv\Upgates\Sdk\Requests\Products\UpdateProductsRequest;
@@ -368,5 +371,26 @@ final class ProductsResource extends BaseResource
         );
 
         return $this->connector->paginate($request)->items();
+    }
+
+    public function listRatingsReviews(?string $productCode = null, ?string $customerEmail = null): iterable
+    {
+        $request = new ListProductsRatingsReviewsRequest($productCode, $customerEmail);
+
+        return $this->connector->paginate($request)->items();
+    }
+
+    public function createRatingReview(string $productCode, string $customerEmail, int $ratingScore, ?array $reviewData = null): array
+    {
+        $request = new CreateProductRatingReviewRequest($productCode, $customerEmail, $ratingScore, $reviewData);
+
+        return $this->connector->send($request)->array('ratings_reviews', []);
+    }
+
+    public function deleteRatingsReviews(?int $id = null, ?array $ids = null): array
+    {
+        $request = new DeleteProductRatingsReviewsRequest($id, $ids);
+
+        return $this->connector->send($request)->array('ratings_reviews', []);
     }
 }
