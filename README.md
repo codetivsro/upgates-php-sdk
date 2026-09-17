@@ -86,7 +86,7 @@ Resource checklist based on the official [API reference](https://docs.upgates.co
 - [x] Custom fields (Vlastní pole)
 - [x] Tags (Štítky)
 - [x] Warehouses (Sklady)
-- [ ] Orders (Objednávky)
+- [x] Orders (Objednávky)
 - [ ] Order history (Objednávky - historie)
 - [ ] Order attachments (Objednávky - přílohy)
 - [ ] Order statuses (Stavy objednávek)
