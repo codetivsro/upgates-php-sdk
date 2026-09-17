@@ -89,7 +89,7 @@ Resource checklist based on the official [API reference](https://docs.upgates.co
 - [x] Orders (Objednávky)
 - [x] Order history (Objednávky - historie)
 - [x] Order attachments (Objednávky - přílohy)
-- [ ] Order statuses (Stavy objednávek)
+- [x] Order statuses (Stavy objednávek)
 - [ ] Customers (Zákazníci)
 - [ ] Customer groups (Skupiny zákazníků)
 - [ ] Users (Uživatelé)
