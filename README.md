@@ -83,7 +83,7 @@ Resource checklist based on the official [API reference](https://docs.upgates.co
 - [x] Product reviews & ratings (Produkty - recenze a hodnocení)
 - [x] Manufacturers (Výrobci)
 - [x] Parameters (Parametry)
-- [ ] Custom fields (Vlastní pole)
+- [x] Custom fields (Vlastní pole)
 - [ ] Tags (Štítky)
 - [ ] Warehouses (Sklady)
 - [ ] Orders (Objednávky)
