@@ -93,7 +93,7 @@ Resource checklist based on the official [API reference](https://docs.upgates.co
 - [x] Customer groups (Skupiny zákazníků)
 - [x] Users (Uživatelé)
 - [x] Payments (Platby)
-- [ ] Discount coupons (Slevové kupóny)
+- [x] Discount coupons (Slevové kupóny)
 - [ ] Redirects (Přesměrování)
 - [ ] Files (Soubory)
 - [ ] Advisors (Rádce)
