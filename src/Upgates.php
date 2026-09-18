@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Codetiv\Upgates\Sdk;
 
+use Codetiv\Upgates\Sdk\Concerns\HasAdvisorResource;
 use Codetiv\Upgates\Sdk\Concerns\HasArticlesResource;
 use Codetiv\Upgates\Sdk\Concerns\HasAvailabilitiesResource;
 use Codetiv\Upgates\Sdk\Concerns\HasCartsResource;
@@ -45,6 +46,7 @@ use Throwable;
 final class Upgates extends Connector implements HasPagination
 {
     use AlwaysThrowOnErrors;
+    use HasAdvisorResource;
     use HasArticlesResource;
     use HasAvailabilitiesResource;
     use HasCartsResource;
