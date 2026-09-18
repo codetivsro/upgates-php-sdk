@@ -95,7 +95,7 @@ Resource checklist based on the official [API reference](https://docs.upgates.co
 - [x] Payments (Platby)
 - [x] Discount coupons (Slevové kupóny)
 - [x] Advisors (Rádce)
-- [ ] Redirects (Přesměrování)
+- [x] Redirects (Přesměrování)
 - [ ] Files (Soubory)
 - [ ] Webhooks (Webhooky)
 - [ ] Graphics — code editor (Grafika - editor kódu)
