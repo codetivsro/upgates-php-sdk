@@ -21,6 +21,7 @@ use Codetiv\Upgates\Sdk\Concerns\HasOrdersResource;
 use Codetiv\Upgates\Sdk\Concerns\HasOrderStatusesResource;
 use Codetiv\Upgates\Sdk\Concerns\HasOwnerRequest;
 use Codetiv\Upgates\Sdk\Concerns\HasParametersResource;
+use Codetiv\Upgates\Sdk\Concerns\HasPaymentsResource;
 use Codetiv\Upgates\Sdk\Concerns\HasPriceListsResource;
 use Codetiv\Upgates\Sdk\Concerns\HasProductsResource;
 use Codetiv\Upgates\Sdk\Concerns\HasShipmentsResource;
@@ -60,6 +61,7 @@ final class Upgates extends Connector implements HasPagination
     use HasOrderStatusesResource;
     use HasOwnerRequest;
     use HasParametersResource;
+    use HasPaymentsResource;
     use HasPriceListsResource;
     use HasProductsResource;
     use HasShipmentsResource;
