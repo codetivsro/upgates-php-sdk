@@ -9,14 +9,13 @@ use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Traits\Body\HasJsonBody;
 
-final class UpdateAvailabilityRequest extends Request implements HasBody
+final class UpdateAvailabilitiesRequest extends Request implements HasBody
 {
     use HasJsonBody;
 
     protected Method $method = Method::PUT;
 
     public function __construct(
-        protected int $id,
         protected array $data
     ) {
     }
@@ -29,12 +28,8 @@ final class UpdateAvailabilityRequest extends Request implements HasBody
     protected function defaultBody(): array
     {
         return [
-            'availabilities' => [
-                [
-                    'id' => $this->id,
-                    ...$this->data,
-                ],
-            ],
+            'availabilities' => $this->data
+
         ];
     }
 

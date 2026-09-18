@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Codetiv\Upgates\Sdk\Resources;
 
-use Codetiv\Upgates\Sdk\Requests\Articles\CreateArticleRequest;
+use Codetiv\Upgates\Sdk\Requests\Articles\CreateArticlesRequest;
 use Codetiv\Upgates\Sdk\Requests\Articles\DeleteArticlesRequest;
 use Codetiv\Upgates\Sdk\Requests\Articles\GetArticleRequest;
 use Codetiv\Upgates\Sdk\Requests\Articles\ListArticlesRequest;
-use Codetiv\Upgates\Sdk\Requests\Articles\UpdateArticleRequest;
+use Codetiv\Upgates\Sdk\Requests\Articles\UpdateArticlesRequest;
 use Saloon\Http\BaseResource;
 
 final class ArticlesResource extends BaseResource
@@ -33,16 +33,16 @@ final class ArticlesResource extends BaseResource
         return $this->connector->paginate($request)->items();
     }
 
-    public function update(int $id, array $data): array
+    public function update(array $data): array
     {
-        $request = new UpdateArticleRequest($id, $data);
+        $request = new UpdateArticlesRequest($data);
 
         return $this->connector->send($request)->array(default: []);
     }
 
     public function create(array $data): array
     {
-        $request = new CreateArticleRequest($data);
+        $request = new CreateArticlesRequest($data);
 
         return $this->connector->send($request)->array(default: []);
     }

@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Codetiv\Upgates\Sdk\Requests\Availabilities;
+namespace Codetiv\Upgates\Sdk\Requests\Categories;
 
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Traits\Body\HasJsonBody;
 
-final class CreateAvailabilityRequest extends Request implements HasBody
+final class CreateCategoriesRequest extends Request implements HasBody
 {
     use HasJsonBody;
 
@@ -22,15 +22,13 @@ final class CreateAvailabilityRequest extends Request implements HasBody
 
     public function resolveEndpoint(): string
     {
-        return '/availabilities';
+        return '/categories';
     }
 
     protected function defaultBody(): array
     {
         return [
-            'availabilities' => [
-                $this->data,
-            ],
+            'categories' => $this->data
         ];
     }
 

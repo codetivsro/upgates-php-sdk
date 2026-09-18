@@ -2,39 +2,33 @@
 
 declare(strict_types=1);
 
-namespace Codetiv\Upgates\Sdk\Requests\Articles;
+namespace Codetiv\Upgates\Sdk\Requests\Availabilities;
 
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Traits\Body\HasJsonBody;
 
-final class UpdateArticleRequest extends Request implements HasBody
+final class CreateAvailabilitiesRequest extends Request implements HasBody
 {
     use HasJsonBody;
 
-    protected Method $method = Method::PUT;
+    protected Method $method = Method::POST;
 
     public function __construct(
-        protected int $id,
         protected array $data
     ) {
     }
 
     public function resolveEndpoint(): string
     {
-        return '/articles';
+        return '/availabilities';
     }
 
     protected function defaultBody(): array
     {
         return [
-            'articles' => [
-                [
-                    'article_id' => $this->id,
-                    ...$this->data,
-                ],
-            ],
+            'availabilities' => $this->data
         ];
     }
 

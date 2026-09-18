@@ -9,14 +9,13 @@ use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Traits\Body\HasJsonBody;
 
-final class UpdateCategoryRequest extends Request implements HasBody
+final class UpdateCategoriesRequest extends Request implements HasBody
 {
     use HasJsonBody;
 
     protected Method $method = Method::PUT;
 
     public function __construct(
-        protected int|string $idOrCode,
         protected array $data
     ) {
     }
@@ -29,12 +28,7 @@ final class UpdateCategoryRequest extends Request implements HasBody
     protected function defaultBody(): array
     {
         return [
-            'categories' => [
-                [
-                    ...(is_int($this->idOrCode) ? ['category_id' => $this->idOrCode] : ['code' => $this->idOrCode]),
-                    ...$this->data,
-                ],
-            ],
+            'categories' => $this->data
         ];
     }
 

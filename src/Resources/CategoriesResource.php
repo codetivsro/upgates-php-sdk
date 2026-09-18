@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Codetiv\Upgates\Sdk\Resources;
 
-use Codetiv\Upgates\Sdk\Requests\Categories\CreateCategoryRequest;
+use Codetiv\Upgates\Sdk\Requests\Categories\CreateCategoriesRequest;
 use Codetiv\Upgates\Sdk\Requests\Categories\DeleteCategoriesRequest;
 use Codetiv\Upgates\Sdk\Requests\Categories\ListCategoriesRequest;
-use Codetiv\Upgates\Sdk\Requests\Categories\UpdateCategoryRequest;
+use Codetiv\Upgates\Sdk\Requests\Categories\UpdateCategoriesRequest;
 use Saloon\Http\BaseResource;
 
 final class CategoriesResource extends BaseResource
@@ -38,16 +38,16 @@ final class CategoriesResource extends BaseResource
         return $this->connector->paginate($request)->items();
     }
 
-    public function update(string|int $idOrCode, array $data): array
+    public function update(array $data): array
     {
-        $request = new UpdateCategoryRequest($idOrCode, $data);
+        $request = new UpdateCategoriesRequest($data);
 
         return $this->connector->send($request)->array('categories', []);
     }
 
     public function create(array $data): array
     {
-        $request = new CreateCategoryRequest($data);
+        $request = new CreateCategoriesRequest($data);
 
         return $this->connector->send($request)->array('categories', []);
     }

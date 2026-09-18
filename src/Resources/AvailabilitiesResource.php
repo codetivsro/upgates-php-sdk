@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace Codetiv\Upgates\Sdk\Resources;
 
 use Codetiv\Upgates\Sdk\Enums\AvailabilityType;
-use Codetiv\Upgates\Sdk\Requests\Availabilities\CreateAvailabilityRequest;
+use Codetiv\Upgates\Sdk\Requests\Availabilities\CreateAvailabilitiesRequest;
 use Codetiv\Upgates\Sdk\Requests\Availabilities\DeleteAvailabilityRequest;
 use Codetiv\Upgates\Sdk\Requests\Availabilities\GetAvailabilityRequest;
 use Codetiv\Upgates\Sdk\Requests\Availabilities\ListAvailabilitiesRequest;
-use Codetiv\Upgates\Sdk\Requests\Availabilities\UpdateAvailabilityRequest;
+use Codetiv\Upgates\Sdk\Requests\Availabilities\UpdateAvailabilitiesRequest;
 use Saloon\Http\BaseResource;
 
 final class AvailabilitiesResource extends BaseResource
@@ -21,16 +21,16 @@ final class AvailabilitiesResource extends BaseResource
         return $this->connector->paginate($request)->items();
     }
 
-    public function update(int $id, array $data): array
+    public function update(array $data): array
     {
-        $request = new UpdateAvailabilityRequest($id, $data);
+        $request = new UpdateAvailabilitiesRequest($data);
 
         return $this->connector->send($request)->array('availabilities', []);
     }
 
     public function create(array $data): array
     {
-        $request = new CreateAvailabilityRequest($data);
+        $request = new CreateAvailabilitiesRequest($data);
 
         return $this->connector->send($request)->array('availabilities', []);
     }

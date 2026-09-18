@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Codetiv\Upgates\Sdk\Requests\Categories;
+namespace Codetiv\Upgates\Sdk\Requests\Articles;
 
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Traits\Body\HasJsonBody;
 
-final class CreateCategoryRequest extends Request implements HasBody
+final class UpdateArticlesRequest extends Request implements HasBody
 {
     use HasJsonBody;
 
-    protected Method $method = Method::POST;
+    protected Method $method = Method::PUT;
 
     public function __construct(
         protected array $data
@@ -22,15 +22,13 @@ final class CreateCategoryRequest extends Request implements HasBody
 
     public function resolveEndpoint(): string
     {
-        return '/categories';
+        return '/articles';
     }
 
     protected function defaultBody(): array
     {
         return [
-            'categories' => [
-                $this->data,
-            ],
+            'articles' => $this->data
         ];
     }
 

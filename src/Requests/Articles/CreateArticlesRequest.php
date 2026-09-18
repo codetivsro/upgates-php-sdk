@@ -9,7 +9,7 @@ use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Traits\Body\HasJsonBody;
 
-final class CreateArticleRequest extends Request implements HasBody
+final class CreateArticlesRequest extends Request implements HasBody
 {
     use HasJsonBody;
 
@@ -28,9 +28,7 @@ final class CreateArticleRequest extends Request implements HasBody
     protected function defaultBody(): array
     {
         return [
-            'articles' => [
-                $this->data,
-            ],
+            'articles' => $this->data
         ];
     }
 
