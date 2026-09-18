@@ -91,7 +91,7 @@ Resource checklist based on the official [API reference](https://docs.upgates.co
 - [x] Order attachments (Objednávky - přílohy)
 - [x] Order statuses (Stavy objednávek)
 - [x] Customers (Zákazníci)
-- [ ] Customer groups (Skupiny zákazníků)
+- [x] Customer groups (Skupiny zákazníků)
 - [ ] Users (Uživatelé)
 - [ ] Payments (Platby)
 - [ ] Discount coupons (Slevové kupóny)
