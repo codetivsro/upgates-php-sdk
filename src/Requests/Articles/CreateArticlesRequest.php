@@ -28,7 +28,7 @@ final class CreateArticlesRequest extends Request implements HasBody
     protected function defaultBody(): array
     {
         return [
-            'articles' => $this->data
+            'articles' => $this->data,
         ];
     }
 

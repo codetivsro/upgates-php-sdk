@@ -28,7 +28,7 @@ final class CreateAvailabilitiesRequest extends Request implements HasBody
     protected function defaultBody(): array
     {
         return [
-            'availabilities' => $this->data
+            'availabilities' => $this->data,
         ];
     }
 

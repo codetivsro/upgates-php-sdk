@@ -28,7 +28,7 @@ final class CreateCategoriesRequest extends Request implements HasBody
     protected function defaultBody(): array
     {
         return [
-            'categories' => $this->data
+            'categories' => $this->data,
         ];
     }
 
