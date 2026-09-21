@@ -41,9 +41,9 @@ final class StocksResource extends BaseResource
         return $this->connector->send($request)->array('stocks', []);
     }
 
-    public function delete(?int $id = null, ?array $ids = null): array
+    public function delete(int... $ids): array
     {
-        $request = new DeleteStocksRequest($id, $ids);
+        $request = new DeleteStocksRequest($ids);
 
         return $this->connector->send($request)->array('stocks', []);
     }
