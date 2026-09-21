@@ -97,6 +97,6 @@ Resource checklist based on the official [API reference](https://docs.upgates.co
 - [x] Advisors (Rádce)
 - [x] Redirects (Přesměrování)
 - [x] Webhooks (Webhooky)
-- [ ] Files (Soubory)
+- [x] Files (Soubory)
 - [ ] Graphics — code editor (Grafika - editor kódu)
 - [ ] Graphics — backups (Grafika - zálohy)
