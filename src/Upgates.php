@@ -32,6 +32,7 @@ use Codetiv\Upgates\Sdk\Concerns\HasStocksResource;
 use Codetiv\Upgates\Sdk\Concerns\HasStoreConfigRequest;
 use Codetiv\Upgates\Sdk\Concerns\HasUsersResource;
 use Codetiv\Upgates\Sdk\Concerns\HasVouchersResource;
+use Codetiv\Upgates\Sdk\Concerns\HasWebhooksResource;
 use Codetiv\Upgates\Sdk\Contracts\HasCustomPaginatedItems;
 use Codetiv\Upgates\Sdk\Exceptions\UpgatesApiException;
 use Saloon\Http\Auth\BasicAuthenticator;
@@ -75,6 +76,7 @@ final class Upgates extends Connector implements HasPagination
     use HasStoreConfigRequest;
     use HasUsersResource;
     use HasVouchersResource;
+    use HasWebhooksResource;
 
     public function __construct(
         public readonly string $storeName,
