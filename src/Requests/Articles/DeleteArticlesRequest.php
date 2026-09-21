@@ -21,7 +21,6 @@ final class DeleteArticlesRequest extends Request
         return '/articles';
     }
 
-
     protected function defaultQuery(): array
     {
         return [
