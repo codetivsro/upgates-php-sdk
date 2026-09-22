@@ -47,9 +47,9 @@ final class WebhooksResource extends BaseResource
         return $this->connector->send($request)->array('webhooks', []);
     }
 
-    public function delete(?int $id = null, ?array $ids = null): array
+    public function delete(int... $ids): array
     {
-        $request = new DeleteWebhooksRequest($id, $ids);
+        $request = new DeleteWebhooksRequest($ids);
 
         return $this->connector->send($request)->array('webhooks', []);
     }

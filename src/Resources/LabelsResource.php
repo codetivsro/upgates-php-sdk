@@ -27,9 +27,9 @@ final class LabelsResource extends BaseResource
         return $this->connector->send($request)->array('labels', []);
     }
 
-    public function delete(?int $id = null, ?array $ids = null): array
+    public function delete(int ... $ids): array
     {
-        $request = new DeleteLabelsRequest($id, $ids);
+        $request = new DeleteLabelsRequest($ids);
 
         return $this->connector->send($request)->array('labels', []);
     }

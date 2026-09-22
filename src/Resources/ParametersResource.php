@@ -43,9 +43,9 @@ final class ParametersResource extends BaseResource
         return $this->connector->send($request)->array('parameters', []);
     }
 
-    public function delete(?int $id = null, ?array $ids = null): array
+    public function delete(int... $ids): array
     {
-        $request = new DeleteParametersRequest($id, $ids);
+        $request = new DeleteParametersRequest($ids);
 
         return $this->connector->send($request)->array('parameters', []);
     }

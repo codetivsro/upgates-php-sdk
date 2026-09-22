@@ -64,9 +64,9 @@ final class VouchersResource extends BaseResource
         return $this->connector->send($request)->array('vouchers', []);
     }
 
-    public function delete(?int $code = null, ?array $codes = null): array
+    public function delete(string... $codes): array
     {
-        $request = new DeleteVouchersRequest($code, $codes);
+        $request = new DeleteVouchersRequest($codes);
 
         return $this->connector->send($request)->array('vouchers', []);
     }

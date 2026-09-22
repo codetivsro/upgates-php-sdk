@@ -33,9 +33,9 @@ final class CustomerGroupsResource extends BaseResource
         return $this->connector->send($request)->array('groups', []);
     }
 
-    public function delete(?int $id = null, ?array $ids = null): array
+    public function delete(int ... $ids): array
     {
-        $request = new DeleteCustomerGroupsRequest($id, $ids);
+        $request = new DeleteCustomerGroupsRequest($ids);
 
         return $this->connector->send($request)->array('groups', []);
     }

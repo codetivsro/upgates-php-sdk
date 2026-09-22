@@ -12,8 +12,7 @@ final class DeleteVouchersRequest extends Request
     protected Method $method = Method::DELETE;
 
     public function __construct(
-        protected ?int $code = null,
-        protected ?array $codes = null,
+        protected array $codes
     ) {
     }
 
@@ -25,8 +24,7 @@ final class DeleteVouchersRequest extends Request
     protected function defaultQuery(): array
     {
         return [
-            'code' => $this->code,
-            'codes' => $this->codes ? implode(';', $this->codes) : null,
+            'codes' => implode(';', $this->codes),
         ];
     }
 }

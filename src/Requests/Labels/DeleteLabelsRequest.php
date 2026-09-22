@@ -12,8 +12,7 @@ final class DeleteLabelsRequest extends Request
     protected Method $method = Method::DELETE;
 
     public function __construct(
-        protected ?int $id = null,
-        protected ?array $ids = null,
+        protected array $ids
     ) {
     }
 
@@ -25,8 +24,7 @@ final class DeleteLabelsRequest extends Request
     protected function defaultQuery(): array
     {
         return [
-            'id' => $this->id,
-            'ids' => $this->ids ? implode(';', $this->ids) : null,
+            'ids' => implode(';', $this->ids),
         ];
     }
 }
