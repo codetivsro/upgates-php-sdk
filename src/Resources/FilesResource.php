@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Codetiv\Upgates\Sdk\Resources;
 
-use Codetiv\Upgates\Sdk\Requests\Categories\ListCategoriesRequest;
 use Codetiv\Upgates\Sdk\Requests\Files\DeleteFileRequest;
 use Codetiv\Upgates\Sdk\Requests\Files\GetFileRequest;
 use Codetiv\Upgates\Sdk\Requests\Files\ListFilesCategoriesRequest;
