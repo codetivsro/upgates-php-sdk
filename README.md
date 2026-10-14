@@ -99,4 +99,4 @@ Resource checklist based on the official [API reference](https://docs.upgates.co
 - [x] Webhooks (Webhooky)
 - [x] Files (Soubory)
 - [x] Graphics — code editor (Grafika - editor kódu)
-- [ ] Graphics — backups (Grafika - zálohy)
+- [x] Graphics — backups (Grafika - zálohy)
