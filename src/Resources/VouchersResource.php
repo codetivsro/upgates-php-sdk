@@ -7,7 +7,9 @@ namespace Codetiv\Upgates\Sdk\Resources;
 use Codetiv\Upgates\Sdk\Enums\VoucherType;
 use Codetiv\Upgates\Sdk\Requests\Vouchers\CreateVoucherRequest;
 use Codetiv\Upgates\Sdk\Requests\Vouchers\DeleteVouchersRequest;
+use Codetiv\Upgates\Sdk\Requests\Vouchers\GetVoucherRequest;
 use Codetiv\Upgates\Sdk\Requests\Vouchers\ListVouchersRequest;
+use Codetiv\Upgates\Sdk\Requests\Vouchers\UpdateVoucherRequest;
 use Saloon\Http\BaseResource;
 
 final class VouchersResource extends BaseResource
@@ -16,6 +18,7 @@ final class VouchersResource extends BaseResource
         ?string $code = null,
         ?array $codes = null,
         ?string $currency = null,
+        ?string $language = null,
         ?bool $active = null,
         ?bool $forProductsInAction = null,
         ?string $dateFrom = null,
@@ -26,6 +29,7 @@ final class VouchersResource extends BaseResource
             $code,
             $codes,
             $currency,
+            $language,
             $active,
             $forProductsInAction,
             $dateFrom,
@@ -34,6 +38,13 @@ final class VouchersResource extends BaseResource
         );
 
         return $this->connector->paginate($request)->items();
+    }
+
+    public function get(string $id, ?string $currency = null): array
+    {
+        $request = new GetVoucherRequest($id, $currency);
+
+        return $this->connector->send($request)->array('vouchers', []);
     }
 
     public function create(
@@ -46,7 +57,13 @@ final class VouchersResource extends BaseResource
         ?bool $forProductsInAction = null,
         ?string $dateFrom = null,
         ?string $dateTo = null,
-        ?float $usedFrom = null
+        ?float $usedFrom = null,
+        ?int $maxUsageCount = null,
+        ?int $maxUsagePerCustomer = null,
+        ?array $categories = null,
+        ?string $note = null,
+        ?string $language = null,
+        ?string $voucherCode = null,
     ): array {
         $request = new CreateVoucherRequest(
             $type,
@@ -58,7 +75,45 @@ final class VouchersResource extends BaseResource
             $forProductsInAction,
             $dateFrom,
             $dateTo,
-            $usedFrom
+            $usedFrom,
+            $maxUsageCount,
+            $maxUsagePerCustomer,
+            $categories,
+            $note,
+            $language,
+            $voucherCode,
+        );
+
+        return $this->connector->send($request)->array('vouchers', []);
+    }
+
+    public function update(
+        int $id,
+        ?bool $active = null,
+        ?bool $forProductsInAction = null,
+        ?string $dateFrom = null,
+        ?string $dateTo = null,
+        ?float $amount = null,
+        ?float $usedFrom = null,
+        ?int $maxUsageCount = null,
+        ?int $maxUsagePerCustomer = null,
+        ?array $categories = null,
+        ?string $note = null,
+        ?string $language = null,
+    ): array {
+        $request = new UpdateVoucherRequest(
+            $id,
+            $active,
+            $forProductsInAction,
+            $dateFrom,
+            $dateTo,
+            $amount,
+            $usedFrom,
+            $maxUsageCount,
+            $maxUsagePerCustomer,
+            $categories,
+            $note,
+            $language,
         );
 
         return $this->connector->send($request)->array('vouchers', []);

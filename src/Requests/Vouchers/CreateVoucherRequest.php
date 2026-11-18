@@ -27,7 +27,13 @@ final class CreateVoucherRequest extends Request implements HasBody
         protected ?bool $forProductsInAction = null,
         protected ?string $dateFrom = null,
         protected ?string $dateTo = null,
-        protected ?float $usedFrom = null
+        protected ?float $usedFrom = null,
+        protected ?int $maxUsageCount = null,
+        protected ?int $maxUsagePerCustomer = null,
+        protected ?array $categories = null,
+        protected ?string $note = null,
+        protected ?string $language = null,
+        protected ?string $voucherCode = null,
     ) {
     }
 
@@ -49,6 +55,12 @@ final class CreateVoucherRequest extends Request implements HasBody
             'date_from' => Helpers::convertQueryDateFormatOrNull($this->dateFrom),
             'date_to' => Helpers::convertQueryDateFormatOrNull($this->dateTo),
             'used_from' => $this->usedFrom,
+            'max_usage_count' => $this->maxUsageCount,
+            'max_usage_per_customer' => $this->maxUsagePerCustomer,
+            'categories' => $this->categories,
+            'note' => $this->note,
+            'language_id' => $this->language,
+            'voucher_code' => $this->voucherCode,
         ];
     }
 
