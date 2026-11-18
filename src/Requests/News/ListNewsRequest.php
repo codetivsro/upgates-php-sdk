@@ -16,6 +16,7 @@ final class ListNewsRequest extends Request implements HasCustomPaginatedItems, 
     protected Method $method = Method::GET;
 
     public function __construct(
+        protected ?int $id = null,
         protected ?string $creationTimeFrom = null,
         protected ?string $lastUpdateTimeFrom = null,
         protected ?bool $active = null,
@@ -37,6 +38,7 @@ final class ListNewsRequest extends Request implements HasCustomPaginatedItems, 
     protected function defaultQuery(): array
     {
         return [
+            'id' => $this->id,
             'creation_time_from' => Helpers::convertQueryDateFormatOrNull($this->creationTimeFrom),
             'last_update_time_from' => Helpers::convertQueryDateFormatOrNull($this->lastUpdateTimeFrom),
             'active_yn' => $this->active,
