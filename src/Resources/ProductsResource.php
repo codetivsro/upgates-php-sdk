@@ -13,6 +13,7 @@ use Codetiv\Upgates\Sdk\Requests\Products\GetProductFilesRequest;
 use Codetiv\Upgates\Sdk\Requests\Products\GetProductLabelsRequest;
 use Codetiv\Upgates\Sdk\Requests\Products\GetProductParametersRequest;
 use Codetiv\Upgates\Sdk\Requests\Products\GetProductPricesRequest;
+use Codetiv\Upgates\Sdk\Requests\Products\GetProductRelatedNewRequest;
 use Codetiv\Upgates\Sdk\Requests\Products\GetProductRelatedRequest;
 use Codetiv\Upgates\Sdk\Requests\Products\GetProductRequest;
 use Codetiv\Upgates\Sdk\Requests\Products\GetProductSimpleRequest;
@@ -23,6 +24,8 @@ use Codetiv\Upgates\Sdk\Requests\Products\ListProductsLabelsRequest;
 use Codetiv\Upgates\Sdk\Requests\Products\ListProductsParametersRequest;
 use Codetiv\Upgates\Sdk\Requests\Products\ListProductsPricesRequest;
 use Codetiv\Upgates\Sdk\Requests\Products\ListProductsRatingsReviewsRequest;
+use Codetiv\Upgates\Sdk\Requests\Products\ListProductsRelatedNewRequest;
+use Codetiv\Upgates\Sdk\Requests\Products\ListProductsRelatedRequest;
 use Codetiv\Upgates\Sdk\Requests\Products\ListProductsSimpleRequest;
 use Codetiv\Upgates\Sdk\Requests\Products\ListProductsVariantsRequest;
 use Codetiv\Upgates\Sdk\Requests\Products\UpdateProductsRequest;
@@ -98,6 +101,13 @@ final class ProductsResource extends BaseResource
     public function getRelated(string $code): array
     {
         $request = new GetProductRelatedRequest($code);
+
+        return $this->connector->send($request)->array('products', []);
+    }
+
+    public function getRelatedNew(string $code): array
+    {
+        $request = new GetProductRelatedNewRequest($code);
 
         return $this->connector->send($request)->array('products', []);
     }
@@ -340,6 +350,74 @@ final class ProductsResource extends BaseResource
             $language,
             $languages,
             $withFiles
+        );
+
+        return $this->connector->paginate($request)->items();
+    }
+
+    public function listRelated(
+        ?array $codes = null,
+        ?string $id = null,
+        ?array $ids = null,
+        ?array $variantCodes = null,
+        ?string $lastUpdateTimeFrom = null,
+        ?bool $active = null,
+        ?bool $archived = null,
+        ?bool $canAddToBasket = null,
+        ?bool $excludeFromSearch = null,
+        ?bool $inStock = null,
+        ?string $language = null,
+        ?array $languages = null,
+        ?string $pricelist = null,
+    ): iterable {
+        $request = new ListProductsRelatedRequest(
+            $codes,
+            $id,
+            $ids,
+            $variantCodes,
+            $lastUpdateTimeFrom,
+            $active,
+            $archived,
+            $canAddToBasket,
+            $excludeFromSearch,
+            $inStock,
+            $language,
+            $languages,
+            $pricelist
+        );
+
+        return $this->connector->paginate($request)->items();
+    }
+
+    public function listRelatedNew(
+        ?array $codes = null,
+        ?string $id = null,
+        ?array $ids = null,
+        ?array $variantCodes = null,
+        ?string $lastUpdateTimeFrom = null,
+        ?bool $active = null,
+        ?bool $archived = null,
+        ?bool $canAddToBasket = null,
+        ?bool $excludeFromSearch = null,
+        ?bool $inStock = null,
+        ?string $language = null,
+        ?array $languages = null,
+        ?string $pricelist = null,
+    ): iterable {
+        $request = new ListProductsRelatedNewRequest(
+            $codes,
+            $id,
+            $ids,
+            $variantCodes,
+            $lastUpdateTimeFrom,
+            $active,
+            $archived,
+            $canAddToBasket,
+            $excludeFromSearch,
+            $inStock,
+            $language,
+            $languages,
+            $pricelist
         );
 
         return $this->connector->paginate($request)->items();
