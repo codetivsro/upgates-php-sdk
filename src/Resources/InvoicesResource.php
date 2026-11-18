@@ -19,6 +19,7 @@ final class InvoicesResource extends BaseResource
         ?string $creationTimeTo = null,
         ?string $lastUpdateTimeFrom = null,
         ?bool $paid = null,
+        ?bool $draft = null,
         ?DocumentType $type = null,
         ?string $orderNumber = null,
     ): iterable {
@@ -28,6 +29,7 @@ final class InvoicesResource extends BaseResource
             $creationTimeTo,
             $lastUpdateTimeFrom,
             $paid,
+            $draft,
             $type,
             $orderNumber
         );

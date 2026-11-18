@@ -22,6 +22,7 @@ final class ListInvoicesRequest extends Request implements HasCustomPaginatedIte
         protected ?string $creationTimeTo = null,
         protected ?string $lastUpdateTimeFrom = null,
         protected ?bool $paid = null,
+        protected ?bool $draft = null,
         protected ?DocumentType $type = null,
         protected ?string $orderNumber = null,
     ) {
@@ -45,6 +46,7 @@ final class ListInvoicesRequest extends Request implements HasCustomPaginatedIte
             'creation_time_to' => Helpers::convertQueryDateFormatOrNull($this->creationTimeTo),
             'last_update_time_from' => Helpers::convertQueryDateFormatOrNull($this->lastUpdateTimeFrom),
             'paid_yn' => $this->paid,
+            'draft_yn' => $this->draft,
             'type' => $this->type?->value,
             'order_number' => $this->orderNumber,
         ];
